@@ -208,3 +208,42 @@ footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 24
   .hero-actions { flex-direction: column; }
   .btn-primary, .btn-outline { width: 100%; justify-content: center; }
 }
+
+/* ── Caso de sucesso ── */
+#caso-sucesso { background: var(--white); }
+.caso-header { text-align: center; margin-bottom: 52px; }
+.caso-header .section-sub { margin: 0 auto; }
+.caso-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.caso-img-wrap { display: flex; align-items: center; gap: 12px; }
+.caso-img { flex: 1; border-radius: 14px; overflow: hidden; position: relative; box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+.caso-img-overlay { position: relative; }
+.caso-label { position: absolute; top: 10px; left: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 99px; z-index: 2; }
+.caso-label.antes { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); }
+.caso-label.depois { background: #4AFF91; color: #064B26; }
+.caso-img-inner { width: 100%; }
+.antes-bg { background: #1a1a2e; }
+.depois-bg { background: #0d2137; }
+.caso-img-inner svg { width: 100%; display: block; }
+.caso-placeholder-text { font-size: 10px; color: rgba(255,255,255,0.35); text-align: center; padding: 6px 8px; background: rgba(0,0,0,0.3); font-family: var(--font-body); }
+.caso-seta { font-size: 24px; color: var(--blue); flex-shrink: 0; font-weight: 700; }
+.caso-academia { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.caso-logo-circle { width: 48px; height: 48px; border-radius: 12px; background: var(--blue); color: var(--white); font-family: var(--font-display); font-size: 18px; display: flex; align-items: center; justify-content: center; letter-spacing: 0.05em; flex-shrink: 0; }
+.caso-nome { font-size: 16px; font-weight: 600; color: var(--dark); }
+.caso-cidade { font-size: 13px; color: var(--gray); }
+.caso-quote { font-size: 15px; color: var(--dark); line-height: 1.7; font-style: italic; border-left: 3px solid var(--blue); padding-left: 16px; margin-bottom: 8px; }
+.caso-autor { font-size: 13px; color: var(--gray); margin-bottom: 24px; padding-left: 16px; }
+.caso-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.caso-stat { background: var(--off-white); border-radius: 10px; padding: 14px 16px; border: 1px solid rgba(19,64,200,0.08); }
+.caso-stat strong { display: block; font-family: var(--font-display); font-size: 28px; color: var(--blue); letter-spacing: 0.02em; line-height: 1; }
+.caso-stat span { font-size: 12px; color: var(--gray); margin-top: 2px; display: block; }
+.btn-caso { display: inline-flex; align-items: center; background: var(--blue); color: var(--white); font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 10px; transition: all var(--transition); font-family: var(--font-body); }
+.btn-caso:hover, .btn-caso:focus { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(19,64,200,0.3); outline: none; }
+
+@media (max-width: 900px) {
+  .caso-wrap { grid-template-columns: 1fr; }
+  .caso-img-wrap { max-width: 480px; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .caso-seta { font-size: 18px; }
+  .caso-stats { grid-template-columns: 1fr 1fr; }
+}
