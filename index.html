@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FitLead Digital — Agência especializada em landing pages para academias. Capture mais alunos com páginas de alta conversão." />
+  <meta name="keywords" content="landing page academia, marketing digital academia, captar alunos, agência digital fitness, FitLead Digital" />
+  <meta name="author" content="Juan Schefer Freitas, Allan de Souza dos Santos" />
+  <meta property="og:title" content="FitLead Digital — Landing Pages para Academias" />
+  <meta property="og:description" content="Especialistas em páginas que convertem visitantes em alunos matriculados." />
+  <meta property="og:type" content="website" />
+  <title>FitLead Digital — Landing Pages para Academias</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Skip link para acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade -->
+  <div id="a11y-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+    <span>Acessibilidade:</span>
+    <button class="a11y-btn" onclick="changeFontSize(-1)" aria-label="Diminuir tamanho da fonte">A−</button>
+    <button class="a11y-btn" onclick="changeFontSize(1)" aria-label="Aumentar tamanho da fonte">A+</button>
+    <button class="a11y-btn" onclick="toggleContrast()" aria-label="Alternar alto contraste" id="contrast-btn">Alto contraste</button>
+    <button class="a11y-btn" onclick="readPage()" aria-label="Ouvir texto da página" id="tts-btn">▶ Ouvir</button>
+  </div>
+
+  <!-- Header / Nav -->
+  <header role="banner">
+    <nav aria-label="Navegação principal">
+      <a href="#" class="logo" aria-label="FitLead Digital — página inicial">
+        <div class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <span class="logo-text">FIT<span>LEAD</span> DIGITAL</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato" class="nav-cta">Solicitar orçamento</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu móvel">
+      <a href="#beneficios" onclick="closeMenu()">Benefícios</a>
+      <a href="#oferta" onclick="closeMenu()">Oferta</a>
+      <a href="#planos" onclick="closeMenu()">Planos</a>
+      <a href="#depoimentos" onclick="closeMenu()">Depoimentos</a>
+      <a href="#contato" onclick="closeMenu()">Solicitar orçamento</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main id="conteudo-principal">
+
+    <!-- Hero -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge" role="status">Especialistas em academias</div>
+          <h1 id="hero-heading" class="hero-title">
+            MAIS ALUNOS<br>
+            <em>PARA SUA</em><br>
+            ACADEMIA
+          </h1>
+          <p class="hero-subtitle">
+            Criamos landing pages que transformam visitantes em alunos matriculados — simples, diretas e com foco total em conversão.
+          </p>
+          <div class="hero-actions">
+            <a href="#contato" class="btn-primary" role="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.5 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+              Quero uma landing page
+            </a>
+            <a href="#planos" class="btn-outline" role="button">Ver planos e preços</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mock-card">
+            <span class="mock-badge">🏋️ Promoção exclusiva</span>
+            <h3>1ª SEMANA GRÁTIS</h3>
+            <p>Experimente sem compromisso. Matricule-se agora!</p>
+            <div class="mock-input">Seu nome completo</div>
+            <div class="mock-input">Seu WhatsApp</div>
+            <div class="mock-btn">Quero minha semana grátis!</div>
+            <div class="mock-stats">
+              <div class="mock-stat">
+                <strong>+320</strong>
+                <span>alunos captados</span>
+              </div>
+              <div class="mock-stat">
+                <strong>87%</strong>
+                <span>taxa de conversão</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" aria-labelledby="beneficios-heading">
+      <div class="container">
+        <div class="benefits-header">
+          <p class="section-tag">Por que escolher a FitLead</p>
+          <h2 id="beneficios-heading" class="section-title">Tudo que sua academia<br>precisa para crescer</h2>
+          <p class="section-sub">Nossas páginas são desenvolvidas com estratégia, design e tecnologia focados no mercado fitness.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Alta conversão</h3>
+            <p>Páginas otimizadas para transformar visitantes em leads qualificados, com formulários simples e CTAs estratégicos.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Responsivo e rápido</h3>
+            <p>Design adaptado para celular, tablet e computador. Carregamento ultrarrápido para não perder nenhum visitante.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Entrega em 7 dias</h3>
+            <p>Processo ágil e simplificado. Sua academia começa a captar alunos em menos de uma semana.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3>Botão de WhatsApp</h3>
+            <p>Integração direta com WhatsApp para facilitar o primeiro contato entre o aluno e a academia.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Foco em resultados</h3>
+            <p>Monitoramos métricas e otimizamos sua página para garantir o máximo de matrículas possível.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Especialistas em fitness</h3>
+            <p>Diferente das agências genéricas, somos 100% focados no mercado de academias e fitness.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oferta -->
+    <section id="oferta" aria-labelledby="oferta-heading">
+      <div class="container">
+        <p class="section-tag">Oferta especial</p>
+        <div class="oferta-badge" role="status">🎉 1ª semana grátis para sua academia!</div>
+        <h2 id="oferta-heading" class="section-title">Teste sem riscos.<br>Resultados garantidos.</h2>
+        <p class="section-sub">Oferecemos uma landing page de demonstração gratuita para sua academia testar o poder da nossa ferramenta antes de fechar qualquer contrato.</p>
+        <br><br>
+        <a href="#contato" class="btn-primary" role="button" style="display:inline-flex; font-size:16px; padding:16px 36px;">
+          Quero minha semana grátis
+        </a>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos" aria-labelledby="planos-heading">
+      <div class="container">
+        <div class="plans-header">
+          <p class="section-tag">Preços</p>
+          <h2 id="planos-heading" class="section-title">Planos para todo tamanho<br>de academia</h2>
+          <p class="section-sub" style="margin:0 auto;">Escolha o plano ideal e comece a captar alunos hoje.</p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card">
+            <p class="plan-name">Starter</p>
+            <div class="plan-price"><sup>R$</sup>497</div>
+            <p class="plan-period">pagamento único</p>
+            <ul class="plan-features" aria-label="Funcionalidades do plano Starter">
+              <li>1 landing page</li>
+              <li>Formulário de cadastro</li>
+              <li>Botão de WhatsApp</li>
+              <li>Design responsivo</li>
+              <li>Entrega em 7 dias</li>
+            </ul>
+            <button class="plan-btn plan-btn-outline" onclick="scrollToContato()">Contratar Starter</button>
+          </article>
+
+          <article class="plan-card featured" aria-label="Plano mais popular">
+            <div class="plan-popular" aria-label="Mais popular">Mais popular</div>
+            <p class="plan-name">Profissional</p>
+            <div class="plan-price"><sup>R$</sup>897</div>
+            <p class="plan-period">pagamento único</p>
+            <ul class="plan-features" aria-label="Funcionalidades do plano Profissional">
+              <li>1 landing page completa</li>
+              <li>Formulário + CRM integrado</li>
+              <li>Botão de WhatsApp</li>
+              <li>Seção de depoimentos</li>
+              <li>Informações sobre planos</li>
+              <li>SEO básico configurado</li>
+              <li>Entrega em 5 dias</li>
+            </ul>
+            <button class="plan-btn plan-btn-fill" onclick="scrollToContato()">Contratar Profissional</button>
+          </article>
+
+          <article class="plan-card">
+            <p class="plan-name">Premium</p>
+            <div class="plan-price"><sup>R$</sup>1.497</div>
+            <p class="plan-period">pagamento único</p>
+            <ul class="plan-features" aria-label="Funcionalidades do plano Premium">
+              <li>Tudo do Profissional</li>
+              <li>Integração com Meta Ads</li>
+              <li>Google Analytics</li>
+              <li>2 revisões de design</li>
+              <li>Suporte por 30 dias</li>
+              <li>Entrega prioritária</li>
+            </ul>
+            <button class="plan-btn plan-btn-outline" onclick="scrollToContato()">Contratar Premium</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" aria-labelledby="dep-heading">
+      <div class="container">
+        <div class="dep-header">
+          <p class="section-tag">Depoimentos</p>
+          <h2 id="dep-heading" class="section-title">O que nossas academias dizem</h2>
+        </div>
+
+        <div class="dep-grid">
+          <article class="dep-card">
+            <div class="dep-stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="dep-text">"Em apenas 2 semanas após lançar a landing page, captamos mais de 40 novos alunos. O formulário de WhatsApp facilitou muito o contato!"</p>
+            <div class="dep-author">
+              <div class="dep-avatar" aria-hidden="true">MC</div>
+              <div>
+                <p class="dep-name">Marcos Costa</p>
+                <p class="dep-role">Dono da Academia PowerFit, SP</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="dep-card">
+            <div class="dep-stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="dep-text">"Tentei outras agências antes, mas nenhuma entendia o mercado de academias como a FitLead. A página ficou exatamente como eu imaginava."</p>
+            <div class="dep-author">
+              <div class="dep-avatar" aria-hidden="true">JS</div>
+              <div>
+                <p class="dep-name">Juliana Silva</p>
+                <p class="dep-role">Gestora da Body Shape, RJ</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="dep-card">
+            <div class="dep-stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="dep-text">"A promoção de 1ª semana grátis na landing page dobrou nossas matrículas no primeiro mês. Investimento que se paga rapidinho!"</p>
+            <div class="dep-author">
+              <div class="dep-avatar" aria-hidden="true">RP</div>
+              <div>
+                <p class="dep-name">Rafael Pereira</p>
+                <p class="dep-role">Proprietário da FitZone, MG</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato / Formulário -->
+    <section id="contato" aria-labelledby="contato-heading">
+      <div class="container">
+        <div class="form-wrap">
+          <div class="form-info">
+            <p class="section-tag">Solicite seu orçamento</p>
+            <h2 id="contato-heading" class="section-title">Pronto para captar mais alunos?</h2>
+            <p>Preencha o formulário e nossa equipe entrará em contato em até 24 horas com uma proposta personalizada para sua academia.</p>
+            <div class="form-highlight" role="note">
+              <strong>Resposta garantida em 24h.</strong> Atendemos academias de todo o Brasil.
+            </div>
+          </div>
+
+          <div>
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <h3>✅ Mensagem enviada!</h3>
+              <p>Nossa equipe entrará em contato em até 24 horas.</p>
+            </div>
+
+            <form id="contact-form" novalidate aria-label="Formulário de solicitação de orçamento">
+              <div>
+                <label for="nome">Nome da academia *</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Academia PowerFit" required aria-required="true" autocomplete="organization" />
+              </div>
+              <div>
+                <label for="responsavel">Seu nome *</label>
+                <input type="text" id="responsavel" name="responsavel" placeholder="Ex: João Silva" required aria-required="true" autocomplete="name" />
+              </div>
+              <div>
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@academia.com.br" required aria-required="true" autocomplete="email" />
+              </div>
+              <div>
+                <label for="telefone">WhatsApp *</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required aria-required="true" autocomplete="tel" />
+              </div>
+              <div>
+                <label for="plano">Plano de interesse</label>
+                <select id="plano" name="plano" aria-label="Selecione o plano de interesse">
+                  <option value="">Selecione um plano</option>
+                  <option value="starter">Starter — R$497</option>
+                  <option value="profissional">Profissional — R$897</option>
+                  <option value="premium">Premium — R$1.497</option>
+                  <option value="duvida">Tenho dúvidas</option>
+                </select>
+              </div>
+              <div>
+                <label for="mensagem">Mensagem (opcional)</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua academia..." aria-label="Mensagem adicional"></textarea>
+              </div>
+              <button type="submit" class="form-submit">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Solicitar orçamento gratuito
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">FITLEAD DIGITAL</div>
+          <p>Agência especializada em landing pages para academias de pequeno e médio porte. Mais alunos, mais resultados.</p>
+          <div class="social-links" aria-label="Redes sociais">
+            <a href="#" class="social-link" aria-label="Instagram da FitLead Digital">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook da FitLead Digital">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn da FitLead Digital">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links rápidos</h4>
+          <ul>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#oferta">Oferta especial</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@fitleadigital.com.br">contato@fitleadigital.com.br</a></li>
+            <li><a href="tel:+5551999999999">(51) 9 9999-9999</a></li>
+            <li><a href="#">WhatsApp</a></li>
+          </ul>
+          <h4 style="margin-top:20px;">Domínio</h4>
+          <ul>
+            <li><a href="#">fitleadigital.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 FitLead Digital. Desenvolvido por Juan Schefer Freitas &amp; Allan de Souza dos Santos.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão WhatsApp fixo -->
+  <a href="https://wa.me/5551999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20landing%20pages%20para%20minha%20academia."
+     class="whatsapp-btn"
+     aria-label="Fale conosco pelo WhatsApp"
+     target="_blank"
+     rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
