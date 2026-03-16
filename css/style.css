@@ -206,3 +206,20 @@ footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 24
   .btn-primary, .btn-outline { width: 100%; justify-content: center; }
   .caso-stats { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── Brasil ── */
+#brasil { background: var(--off-white); }
+.brasil-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.brasil-stats { display: flex; gap: 24px; margin-top: 28px; flex-wrap: wrap; }
+.brasil-stat strong { display: block; font-family: var(--font-display); font-size: 36px; color: var(--blue); letter-spacing: 0.02em; line-height: 1; }
+.brasil-stat span { font-size: 13px; color: var(--gray); }
+.brasil-mapa { display: flex; justify-content: center; }
+.brasil-mapa svg { width: 100%; max-width: 340px; }
+
+/* Plan description */
+.plan-desc { font-size: 13px; color: var(--gray); line-height: 1.55; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--off-white); }
+
+@media (max-width: 900px) {
+  .brasil-wrap { grid-template-columns: 1fr; }
+  .brasil-mapa { display: none; }
+}
