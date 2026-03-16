@@ -86,3 +86,7 @@
         }
       });
     }, { threshold: 0.1 });
+// Botão semana grátis no card hero
+document.querySelector('.mock-btn').addEventListener('click', function() {
+  document.getElementById('contato').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
