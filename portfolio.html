@@ -11,158 +11,163 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
+    /* Hero */
     .port-hero {
       background: linear-gradient(135deg, #0A2280 0%, #1340C8 60%, #3A6FFF 100%);
-      color: #fff;
-      padding: 64px 24px 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      color: #fff; padding: 64px 24px 56px;
+      text-align: center; position: relative; overflow: hidden;
     }
     .port-hero::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     .port-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .port-back {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; color: rgba(255,255,255,0.65);
-      margin-bottom: 32px; text-decoration: none; transition: color 0.2s;
-    }
+    .port-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 32px; text-decoration: none; transition: color 0.2s; }
     .port-back:hover { color: #fff; }
-    .port-hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(40px, 6vw, 72px);
-      line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 16px;
-    }
+    .port-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 6vw, 72px); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 16px; }
     .port-hero h1 em { font-style: normal; color: #4AFF91; }
     .port-hero p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.65; }
 
     /* Stats bar */
-    .port-stats {
-      background: #fff;
-      border-bottom: 1px solid rgba(19,64,200,0.1);
-      padding: 24px;
-    }
-    .port-stats-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; justify-content: center; gap: 56px; flex-wrap: wrap;
-    }
+    .port-stats { background: #fff; border-bottom: 1px solid rgba(19,64,200,0.1); padding: 24px; }
+    .port-stats-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; }
     .port-stat { text-align: center; }
     .port-stat strong { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: #1340C8; letter-spacing: 0.02em; }
     .port-stat span { font-size: 13px; color: #6B7280; }
 
-    /* Fotos reais */
+    /* Seções */
     .port-section { padding: 72px 24px; }
-    .port-section:nth-child(even) { background: #F4F6FF; }
+    .port-section.bg-off { background: #F4F6FF; }
     .port-inner { max-width: 1100px; margin: 0 auto; }
-    .port-section-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1340C8; margin-bottom: 10px; }
-    .port-section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(30px, 4vw, 48px); color: #0D1117; line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 8px; }
-    .port-section-sub { font-size: 15px; color: #6B7280; margin-bottom: 40px; line-height: 1.65; max-width: 560px; }
+    .port-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1340C8; margin-bottom: 10px; }
+    .port-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(30px, 4vw, 48px); color: #0D1117; line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 8px; }
+    .port-sub { font-size: 15px; color: #6B7280; margin-bottom: 40px; line-height: 1.65; max-width: 560px; }
 
-    /* Grid de fotos */
-    .fotos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .foto-card { border-radius: 14px; overflow: hidden; position: relative; box-shadow: 0 8px 32px rgba(0,0,0,0.1); transition: transform 0.25s, box-shadow 0.25s; }
+    /* Grid fotos */
+    .fotos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .foto-card { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.1); transition: transform 0.25s, box-shadow 0.25s; background: #fff; }
     .foto-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.15); }
-    .foto-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
-    .foto-card-info { padding: 16px 18px; background: #fff; }
-    .foto-card-nome { font-size: 15px; font-weight: 600; color: #0D1117; margin-bottom: 4px; }
+    .foto-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+    .foto-card-info { padding: 16px 18px; }
+    .foto-card-nome { font-size: 15px; font-weight: 600; color: #0D1117; margin-bottom: 3px; }
     .foto-card-cidade { font-size: 12px; color: #6B7280; margin-bottom: 10px; }
     .foto-card-stats { display: flex; gap: 16px; }
     .foto-card-stat { font-size: 12px; color: #6B7280; }
     .foto-card-stat strong { color: #1340C8; font-weight: 600; }
 
-    /* Demo landing page */
-    .demo-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .demo-info .port-section-sub { margin-bottom: 28px; }
-    .demo-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    /* Demo */
+    .demo-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+
+    .demo-info .port-sub { margin-bottom: 24px; }
+    .demo-features { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 11px; }
     .demo-features li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #0D1117; }
-    .demo-features li::before {
-      content: ''; width: 20px; height: 20px; flex-shrink: 0;
-      background: #EEF3FF; border-radius: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231340C8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-      background-size: 12px; background-position: center; background-repeat: no-repeat;
+    .demo-check { width: 20px; height: 20px; flex-shrink: 0; background: #EEF3FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .demo-check svg { width: 11px; height: 11px; stroke: #1340C8; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Mockup de celular com landing page realista */
+    .demo-phone-wrap { display: flex; justify-content: center; position: relative; }
+    .demo-phone {
+      width: 260px;
+      background: #111;
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.08);
+      position: relative;
     }
-    .demo-visual { position: relative; }
-    .demo-browser {
-      background: #1a1a2e;
-      border-radius: 14px;
+    .demo-phone::before {
+      content: '';
+      display: block;
+      width: 80px; height: 20px;
+      background: #111;
+      border-radius: 0 0 14px 14px;
+      margin: 0 auto 8px;
+    }
+    .demo-phone-screen {
+      background: #fff;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.25);
-    }
-    .demo-browser-bar {
-      background: #2d2d3a;
-      padding: 10px 16px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .demo-dots { display: flex; gap: 6px; }
-    .demo-dots span { width: 10px; height: 10px; border-radius: 50%; }
-    .demo-dots span:nth-child(1) { background: #FF5F57; }
-    .demo-dots span:nth-child(2) { background: #FFBD2E; }
-    .demo-dots span:nth-child(3) { background: #28CA41; }
-    .demo-url {
-      flex: 1; background: #1a1a2e; border-radius: 6px;
-      padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.4);
-      font-family: monospace;
-    }
-    .demo-screen {
-      background: linear-gradient(160deg, #0A2280 0%, #1340C8 100%);
-      padding: 24px 20px;
-    }
-    .demo-screen-badge {
-      display: inline-block; background: #4AFF91; color: #064B26;
-      font-size: 10px; font-weight: 700; padding: 3px 10px;
-      border-radius: 99px; margin-bottom: 10px;
-    }
-    .demo-screen h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px; color: #fff; letter-spacing: 0.02em;
-      line-height: 1; margin-bottom: 8px;
-    }
-    .demo-screen p { font-size: 11px; color: rgba(255,255,255,0.7); margin-bottom: 14px; line-height: 1.5; }
-    .demo-screen-input {
-      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 6px; padding: 8px 12px; font-size: 11px;
-      color: rgba(255,255,255,0.5); margin-bottom: 8px; width: 100%;
       font-family: 'DM Sans', sans-serif;
     }
-    .demo-screen-btn {
-      background: #fff; color: #1340C8; border: none; border-radius: 6px;
-      padding: 9px; font-size: 12px; font-weight: 700; width: 100%;
-      font-family: 'DM Sans', sans-serif; cursor: default;
+
+    /* Topo da landing page demo */
+    .lp-header {
+      background: #0A2280;
+      padding: 10px 14px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .demo-screen-stats { display: flex; gap: 8px; margin-top: 12px; }
-    .demo-screen-stat {
-      flex: 1; background: rgba(255,255,255,0.1); border-radius: 6px;
-      padding: 8px; text-align: center;
+    .lp-logo { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: #fff; letter-spacing: 0.05em; }
+    .lp-nav-btn { background: #1340C8; color: #fff; font-size: 8px; font-weight: 600; padding: 4px 8px; border-radius: 4px; }
+
+    /* Hero da landing */
+    .lp-hero {
+      background: linear-gradient(160deg, #0A2280 0%, #1340C8 100%);
+      padding: 18px 14px 16px;
+      text-align: center;
     }
-    .demo-screen-stat strong { display: block; font-size: 14px; font-weight: 700; color: #4AFF91; }
-    .demo-screen-stat span { font-size: 9px; color: rgba(255,255,255,0.6); }
-    .demo-label {
-      position: absolute; bottom: -12px; right: 16px;
-      background: #1340C8; color: #fff;
-      font-size: 11px; font-weight: 600; padding: 4px 14px;
-      border-radius: 99px; box-shadow: 0 4px 16px rgba(19,64,200,0.4);
+    .lp-badge { display: inline-block; background: #4AFF91; color: #064B26; font-size: 8px; font-weight: 700; padding: 3px 8px; border-radius: 99px; margin-bottom: 8px; }
+    .lp-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; line-height: 1; letter-spacing: 0.02em; margin-bottom: 6px; }
+    .lp-hero h1 em { font-style: normal; color: #A8C4FF; }
+    .lp-hero p { font-size: 9px; color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: 12px; }
+
+    /* Form dentro da landing */
+    .lp-form { background: #fff; margin: 0 10px; border-radius: 8px; padding: 12px; margin-top: -8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .lp-form-title { font-size: 10px; font-weight: 600; color: #0D1117; margin-bottom: 8px; }
+    .lp-input { background: #F4F6FF; border: 1px solid #E5E7EB; border-radius: 5px; padding: 6px 8px; font-size: 8.5px; color: #9CA3AF; margin-bottom: 5px; width: 100%; display: block; }
+    .lp-btn { background: #1340C8; color: #fff; border: none; border-radius: 5px; padding: 8px; font-size: 9px; font-weight: 700; width: 100%; text-align: center; display: block; }
+
+    /* Benefícios na landing */
+    .lp-benefits { padding: 12px 14px; background: #F4F6FF; }
+    .lp-benefits-title { font-size: 9px; font-weight: 600; color: #0D1117; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .lp-benefit { display: flex; align-items: center; gap: 6px; font-size: 8.5px; color: #374151; margin-bottom: 5px; }
+    .lp-dot { width: 6px; height: 6px; border-radius: 50%; background: #1340C8; flex-shrink: 0; }
+
+    /* Depoimento na landing */
+    .lp-dep { padding: 12px 14px; }
+    .lp-dep-card { background: #F4F6FF; border-radius: 6px; padding: 10px; border-left: 3px solid #1340C8; }
+    .lp-dep-text { font-size: 8px; color: #374151; font-style: italic; line-height: 1.5; margin-bottom: 6px; }
+    .lp-dep-author { display: flex; align-items: center; gap: 6px; }
+    .lp-dep-avatar { width: 18px; height: 18px; border-radius: 50%; background: #1340C8; display: flex; align-items: center; justify-content: center; font-size: 7px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .lp-dep-name { font-size: 8px; font-weight: 600; color: #0D1117; }
+    .lp-dep-role { font-size: 7px; color: #6B7280; }
+
+    /* Rodapé da landing */
+    .lp-footer { background: #0D1117; padding: 8px 14px; text-align: center; }
+    .lp-footer p { font-size: 7.5px; color: rgba(255,255,255,0.4); }
+
+    /* Badge flutuante */
+    .demo-badge-float {
+      position: absolute;
+      top: 20px; right: -20px;
+      background: #4AFF91; color: #064B26;
+      font-size: 11px; font-weight: 700;
+      padding: 8px 14px; border-radius: 99px;
+      box-shadow: 0 4px 16px rgba(74,255,145,0.4);
+      white-space: nowrap;
     }
+    .demo-badge-float2 {
+      position: absolute;
+      bottom: 40px; left: -24px;
+      background: #fff; color: #0D1117;
+      font-size: 11px; font-weight: 600;
+      padding: 8px 14px; border-radius: 99px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      white-space: nowrap;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .demo-badge-float2::before { content: '📱'; font-size: 12px; }
 
     /* CTA final */
     .port-cta { background: #0A2280; color: #fff; padding: 72px 24px; text-align: center; }
     .port-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 60px); letter-spacing: 0.02em; margin-bottom: 12px; }
     .port-cta p { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 32px; line-height: 1.65; }
-    .port-cta-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #4AFF91; color: #064B26; font-weight: 700;
-      font-size: 16px; padding: 16px 36px; border-radius: 10px;
-      transition: all 0.2s; font-family: 'DM Sans', sans-serif;
-    }
+    .port-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #4AFF91; color: #064B26; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 10px; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
     .port-cta-btn:hover { background: #2ecc71; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,255,145,0.3); }
 
-    /* Responsivo */
     @media (max-width: 900px) {
       .fotos-grid { grid-template-columns: 1fr 1fr; }
       .demo-wrap { grid-template-columns: 1fr; }
-      .port-stats-inner { gap: 28px; }
+      .demo-phone-wrap { order: -1; }
+      .demo-badge-float, .demo-badge-float2 { display: none; }
     }
     @media (max-width: 600px) {
       .fotos-grid { grid-template-columns: 1fr; }
@@ -172,7 +177,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header role="banner">
     <nav aria-label="Navegação principal">
       <a href="index.html" class="logo" aria-label="FitLead Digital">
@@ -186,7 +190,7 @@
       <ul class="nav-links" role="list">
         <li><a href="index.html#beneficios">Benefícios</a></li>
         <li><a href="index.html#planos">Planos</a></li>
-        <li><a href="portfolio.html" style="color:#1340C8;border-color:#1340C8;">Portfólio</a></li>
+        <li><a href="portfolio.html" style="color:#1340C8; border-color:#1340C8;">Portfólio</a></li>
         <li><a href="formulario.html" class="nav-cta">Solicitar orçamento</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -203,7 +207,6 @@
 
   <main>
 
-    <!-- Hero -->
     <div class="port-hero">
       <div class="port-hero-inner">
         <a href="index.html" class="port-back">← Voltar ao site</a>
@@ -212,56 +215,55 @@
       </div>
     </div>
 
-    <!-- Stats -->
-    <div class="port-stats" role="region" aria-label="Números do portfólio">
+    <div class="port-stats" role="region" aria-label="Números">
       <div class="port-stats-inner">
         <div class="port-stat"><strong>80+</strong><span>academias atendidas</span></div>
         <div class="port-stat"><strong>12+</strong><span>estados do Brasil</span></div>
         <div class="port-stat"><strong>87%</strong><span>taxa média de conversão</span></div>
-        <div class="port-stat"><strong>+4.200</strong><span>alunos captados no total</span></div>
+        <div class="port-stat"><strong>+4.200</strong><span>alunos captados</span></div>
       </div>
     </div>
 
     <!-- Fotos reais -->
     <section class="port-section" aria-labelledby="fotos-heading">
       <div class="port-inner">
-        <p class="port-section-tag">Nossos clientes</p>
-        <h2 id="fotos-heading" class="port-section-title">Academias que atendemos</h2>
-        <p class="port-section-sub">Cada academia tem sua identidade. Criamos landing pages únicas e estratégicas para cada perfil de público.</p>
+        <p class="port-tag">Nossos clientes</p>
+        <h2 id="fotos-heading" class="port-title">Academias que atendemos</h2>
+        <p class="port-sub">Cada academia tem sua identidade. Criamos landing pages únicas para cada perfil de público.</p>
 
         <div class="fotos-grid">
           <article class="foto-card">
-            <img src="img_academia1.png" alt="Academia com equipamentos de crossfit e pesos coloridos" loading="lazy" />
+            <img src="img/academia1.png" alt="Academia de crossfit com equipamentos de peso e racks coloridos" loading="lazy" />
             <div class="foto-card-info">
               <p class="foto-card-nome">Iron House CrossFit</p>
               <p class="foto-card-cidade">Porto Alegre, RS</p>
               <div class="foto-card-stats">
                 <span class="foto-card-stat"><strong>+127</strong> alunos</span>
-                <span class="foto-card-stat"><strong>60 dias</strong> de resultado</span>
+                <span class="foto-card-stat"><strong>60 dias</strong></span>
               </div>
             </div>
           </article>
 
           <article class="foto-card">
-            <img src="img_academia2.png" alt="Academia moderna com aparelhos Matrix e iluminação de LED" loading="lazy" />
+            <img src="img/academia2.png" alt="Academia moderna com aparelhos Matrix e iluminação LED branca" loading="lazy" />
             <div class="foto-card-info">
               <p class="foto-card-nome">Matrix Fitness Club</p>
               <p class="foto-card-cidade">São Paulo, SP</p>
               <div class="foto-card-stats">
                 <span class="foto-card-stat"><strong>+89</strong> alunos</span>
-                <span class="foto-card-stat"><strong>45 dias</strong> de resultado</span>
+                <span class="foto-card-stat"><strong>45 dias</strong></span>
               </div>
             </div>
           </article>
 
           <article class="foto-card">
-            <img src="img_academia3.png" alt="Fachada da academia HC Fitness com logo verde e roxo" loading="lazy" />
+            <img src="img/academia3.png" alt="Fachada da HC Fitness Academia com logo verde e roxo" loading="lazy" />
             <div class="foto-card-info">
               <p class="foto-card-nome">HC Fitness Academia</p>
               <p class="foto-card-cidade">Curitiba, PR</p>
               <div class="foto-card-stats">
                 <span class="foto-card-stat"><strong>+94</strong> alunos</span>
-                <span class="foto-card-stat"><strong>30 dias</strong> de resultado</span>
+                <span class="foto-card-stat"><strong>30 dias</strong></span>
               </div>
             </div>
           </article>
@@ -269,55 +271,85 @@
       </div>
     </section>
 
-    <!-- Demo landing page -->
-    <section class="port-section" aria-labelledby="demo-heading">
+    <!-- Demo realista -->
+    <section class="port-section bg-off" aria-labelledby="demo-heading">
       <div class="port-inner">
         <div class="demo-wrap">
+
           <div class="demo-info">
-            <p class="port-section-tag">Como funciona</p>
-            <h2 id="demo-heading" class="port-section-title">Veja como fica<br>sua landing page</h2>
-            <p class="port-section-sub">Criamos uma página focada em conversão — simples, direta e com todos os elementos que fazem o visitante se matricular na hora.</p>
-            <ul class="demo-features" aria-label="Elementos inclusos">
-              <li>Oferta de destaque com 10% de desconto</li>
-              <li>Formulário de cadastro rápido</li>
-              <li>Botão de WhatsApp integrado</li>
-              <li>Depoimentos de alunos reais</li>
-              <li>Seção de planos e preços</li>
-              <li>Design responsivo para celular</li>
+            <p class="port-tag">Exemplo real</p>
+            <h2 id="demo-heading" class="port-title">É exatamente assim<br>que fica sua página</h2>
+            <p class="port-sub">Veja ao lado um exemplo de landing page que criamos para a Iron House CrossFit — a mesma estrutura que entregamos para cada cliente, adaptada com a identidade de cada academia.</p>
+            <ul class="demo-features" aria-label="O que está incluso">
+              <li><div class="demo-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Header com logo e navegação</li>
+              <li><div class="demo-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Oferta com destaque e urgência</li>
+              <li><div class="demo-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Formulário de captura de leads</li>
+              <li><div class="demo-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Lista de benefícios da academia</li>
+              <li><div class="demo-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Depoimento de aluno real</li>
+              <li><div class="demo-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Responsivo 100% no celular</li>
             </ul>
             <a href="formulario.html" class="btn-caso">Quero minha landing page →</a>
           </div>
-          <div class="demo-visual">
-            <div class="demo-browser" role="img" aria-label="Demonstração de uma landing page de academia">
-              <div class="demo-browser-bar">
-                <div class="demo-dots">
-                  <span></span><span></span><span></span>
+
+          <div class="demo-phone-wrap">
+            <div class="demo-phone" role="img" aria-label="Mockup de celular mostrando a landing page da Iron House CrossFit">
+              <div class="demo-phone-screen">
+
+                <div class="lp-header">
+                  <span class="lp-logo">IRON HOUSE</span>
+                  <span class="lp-nav-btn">Matricule-se</span>
                 </div>
-                <div class="demo-url">academiapowerfit.com.br</div>
-              </div>
-              <div class="demo-screen">
-                <div class="demo-screen-badge">🏋️ Oferta por tempo limitado</div>
-                <h2>COMECE HOJE COM<br>10% DE DESCONTO</h2>
-                <p>Primeira semana com personal trainer incluso. Matricule-se agora e garanta sua vaga!</p>
-                <div class="demo-screen-input">Seu nome completo</div>
-                <div class="demo-screen-input">Seu WhatsApp</div>
-                <div class="demo-screen-btn">✓ Quero meu desconto agora!</div>
-                <div class="demo-screen-stats">
-                  <div class="demo-screen-stat"><strong>+320</strong><span>alunos captados</span></div>
-                  <div class="demo-screen-stat"><strong>87%</strong><span>conversão</span></div>
-                  <div class="demo-screen-stat"><strong>7 dias</strong><span>entrega</span></div>
+
+                <div class="lp-hero">
+                  <div class="lp-badge">🏋️ Oferta por tempo limitado</div>
+                  <h1>TREINE COM<br><em>10% OFF</em><br>NA MATRÍCULA</h1>
+                  <p>Primeira semana com personal trainer incluso. Vagas limitadas!</p>
                 </div>
+
+                <div class="lp-form">
+                  <p class="lp-form-title">Garanta sua vaga agora</p>
+                  <div class="lp-input">Seu nome completo</div>
+                  <div class="lp-input">Seu WhatsApp</div>
+                  <div class="lp-btn">✓ Quero meu desconto!</div>
+                </div>
+
+                <div class="lp-benefits">
+                  <p class="lp-benefits-title">Por que a Iron House?</p>
+                  <div class="lp-benefit"><div class="lp-dot"></div>Equipamentos profissionais</div>
+                  <div class="lp-benefit"><div class="lp-dot"></div>Coaches certificados</div>
+                  <div class="lp-benefit"><div class="lp-dot"></div>Turmas para todos os níveis</div>
+                  <div class="lp-benefit"><div class="lp-dot"></div>Ambiente motivador</div>
+                </div>
+
+                <div class="lp-dep">
+                  <div class="lp-dep-card">
+                    <p class="lp-dep-text">"Entrei pela landing page e nunca mais parei. Melhor decisão da minha vida!"</p>
+                    <div class="lp-dep-author">
+                      <div class="lp-dep-avatar">AC</div>
+                      <div>
+                        <p class="lp-dep-name">Ana Clara</p>
+                        <p class="lp-dep-role">Aluna há 8 meses</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lp-footer">
+                  <p>&copy; 2024 Iron House CrossFit • Porto Alegre, RS</p>
+                </div>
+
               </div>
             </div>
-            <div class="demo-label">Preview real</div>
+            <div class="demo-badge-float" aria-hidden="true">+127 alunos captados</div>
+            <div class="demo-badge-float2" aria-hidden="true">100% responsivo</div>
           </div>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- CTA final -->
   <div class="port-cta" role="region" aria-label="Chamada para ação">
     <h2>PRONTO PARA TER<br>RESULTADOS ASSIM?</h2>
     <p>Garanta 10% de desconto na sua primeira landing page e comece a captar alunos ainda essa semana.</p>
@@ -327,7 +359,6 @@
     </a>
   </div>
 
-  <!-- WhatsApp -->
   <a href="https://wa.me/5551999999999?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20landing%20pages%20para%20minha%20academia."
      class="whatsapp-btn" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" aria-hidden="true">
