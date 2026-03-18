@@ -11,16 +11,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
 
-    /* Lado esquerdo */
+    body {
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* ── Lado esquerdo ── */
     .fp-left {
+      width: 50%;
+      min-height: 100vh;
       background: linear-gradient(160deg, #0A2280 0%, #1340C8 55%, #1A52E0 100%);
       color: #fff;
       padding: 48px 52px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 32px;
       position: relative;
       overflow: hidden;
     }
@@ -28,97 +36,239 @@
       content: '';
       position: absolute;
       inset: 0;
+      pointer-events: none;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    .fp-top { position: relative; z-index: 1; }
+
     .fp-back {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; color: rgba(255,255,255,0.65);
-      margin-bottom: 40px; text-decoration: none; transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+      z-index: 1;
     }
     .fp-back:hover { color: #fff; }
+
     .fp-logo {
-      font-family: 'Bebas Neue', sans-serif; font-size: 24px;
-      letter-spacing: 0.05em; color: #fff; display: block; margin-bottom: 32px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      letter-spacing: 0.05em;
+      color: #fff;
+      position: relative;
+      z-index: 1;
     }
     .fp-logo span { color: #A8C4FF; }
+
     .fp-heading {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(44px, 5vw, 68px);
-      line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 16px;
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
     }
     .fp-heading em { font-style: normal; color: #4AFF91; }
-    .fp-sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 340px; margin-bottom: 36px; }
-    .fp-benefits { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+
+    .fp-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      max-width: 340px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fp-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
     .fp-benefits li {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 14px; color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
     }
     .fp-check {
-      width: 20px; height: 20px; flex-shrink: 0;
-      background: rgba(74,255,145,0.15); border: 1.5px solid #4AFF91;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      background: rgba(74,255,145,0.15);
+      border: 1.5px solid #4AFF91;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .fp-check svg { width: 11px; height: 11px; stroke: #4AFF91; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .fp-check svg {
+      width: 11px; height: 11px;
+      stroke: #4AFF91; fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
 
-    /* Testimonial */
     .fp-testimonial {
-      position: relative; z-index: 1;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 14px; padding: 20px 22px;
+      border-radius: 14px;
+      padding: 20px 22px;
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
     }
-    .fp-testimonial p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.65; font-style: italic; margin-bottom: 12px; }
+    .fp-testimonial p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
     .fp-t-author { display: flex; align-items: center; gap: 10px; }
     .fp-avatar {
       width: 34px; height: 34px; border-radius: 50%;
-      background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
       display: flex; align-items: center; justify-content: center;
       font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
     }
     .fp-t-name { font-size: 13px; font-weight: 600; color: #fff; }
     .fp-t-role { font-size: 11px; color: rgba(255,255,255,0.5); }
 
-    /* Lado direito */
+    /* ── Lado direito ── */
     .fp-right {
+      width: 50%;
+      min-height: 100vh;
       background: #F4F6FF;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
       padding: 48px 52px;
     }
-    .fp-form-wrap { width: 100%; max-width: 420px; }
-    .fp-form-title { font-size: 22px; font-weight: 600; color: #0D1117; margin-bottom: 4px; }
-    .fp-form-sub { font-size: 14px; color: #6B7280; margin-bottom: 28px; }
 
-    .fp-form { display: flex; flex-direction: column; gap: 14px; }
-    .fp-form label { font-size: 13px; font-weight: 500; color: #0D1117; margin-bottom: 4px; display: block; }
-    .fp-form input, .fp-form select, .fp-form textarea {
-      width: 100%; padding: 12px 16px;
-      border: 1.5px solid #E5E7EB; border-radius: 10px;
-      font-size: 14px; font-family: 'DM Sans', sans-serif;
-      color: #0D1117; background: #fff;
-      transition: border-color 0.2s, box-shadow 0.2s;
+    .fp-form-wrap {
+      width: 100%;
+      max-width: 420px;
     }
-    .fp-form input:focus, .fp-form select:focus, .fp-form textarea:focus {
-      outline: none; border-color: #1340C8; box-shadow: 0 0 0 3px rgba(19,64,200,0.1);
+
+    .fp-form-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #0D1117;
+      margin-bottom: 4px;
+    }
+    .fp-form-sub {
+      font-size: 14px;
+      color: #6B7280;
+      margin-bottom: 28px;
+    }
+
+    .fp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .fp-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    .fp-form label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #0D1117;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .fp-form input,
+    .fp-form select,
+    .fp-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: #0D1117;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      display: block;
+    }
+    .fp-form input:focus,
+    .fp-form select:focus,
+    .fp-form textarea:focus {
+      border-color: #1340C8;
+      box-shadow: 0 0 0 3px rgba(19,64,200,0.1);
+    }
+    .fp-form input.erro,
+    .fp-form select.erro,
+    .fp-form textarea.erro {
+      border-color: #E24B4A;
+      box-shadow: 0 0 0 3px rgba(226,75,74,0.1);
     }
     .fp-form textarea { min-height: 90px; resize: vertical; }
+
+    .campo-erro-msg {
+      display: none;
+      font-size: 12px;
+      color: #E24B4A;
+      margin-top: 5px;
+      padding-left: 2px;
+    }
+    .campo-erro-msg.visivel { display: block; }
+
     .fp-submit {
-      background: #1340C8; color: #fff; border: none; border-radius: 10px;
-      padding: 15px; font-size: 16px; font-weight: 600; cursor: pointer;
-      font-family: 'DM Sans', sans-serif; transition: all 0.2s;
-      display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      width: 100%;
+      background: #1340C8;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
     }
     .fp-submit:hover, .fp-submit:focus {
-      background: #0A2280; transform: translateY(-2px);
+      background: #0A2280;
+      transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(19,64,200,0.35);
-      outline: 3px solid rgba(19,64,200,0.2);
+      outline: none;
     }
-    .fp-privacy { font-size: 11px; color: #9CA3AF; text-align: center; margin-top: 12px; line-height: 1.5; }
+
+    .fp-privacy {
+      font-size: 11px;
+      color: #9CA3AF;
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
 
     /* Sucesso */
     .fp-success {
-      display: none; text-align: center; padding: 40px 24px;
-      background: #ECFDF5; border-radius: 14px; border: 1.5px solid #6EE7B7;
+      display: none;
+      text-align: center;
+      padding: 40px 24px;
+      background: #ECFDF5;
+      border-radius: 14px;
+      border: 1.5px solid #6EE7B7;
     }
     .fp-success.show { display: block; }
     .fp-success-icon { font-size: 48px; margin-bottom: 16px; }
@@ -128,14 +278,14 @@
 
     /* Responsivo */
     @media (max-width: 860px) {
-      body { grid-template-columns: 1fr; }
-      .fp-left { padding: 36px 28px 32px; }
-      .fp-right { padding: 36px 28px; }
+      body { flex-direction: column; }
+      .fp-left { width: 100%; min-height: auto; padding: 36px 28px; }
+      .fp-right { width: 100%; min-height: auto; padding: 36px 28px; }
       .fp-benefits { display: none; }
-      .fp-testimonial { margin-top: 32px; }
+      .fp-testimonial { margin-top: 0; }
     }
     @media (max-width: 480px) {
-      .fp-left { padding: 28px 20px 24px; }
+      .fp-left { padding: 28px 20px; }
       .fp-right { padding: 28px 20px; }
     }
   </style>
@@ -144,43 +294,39 @@
 
   <!-- Esquerda -->
   <div class="fp-left">
-    <div class="fp-top">
-      <a href="index.html" class="fp-back">
-        ← Voltar ao site
-      </a>
-      <span class="fp-logo">FIT<span>LEAD</span> DIGITAL</span>
-      <h1 class="fp-heading">GARANTA SEU<br><em>DESCONTO</em><br>DE 10%</h1>
-      <p class="fp-sub">Preencha o formulário e nossa equipe entra em contato em até 24h para aplicar seu desconto na primeira landing page.</p>
-      <ul class="fp-benefits" aria-label="Benefícios inclusos">
-        <li>
-          <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          10% de desconto garantido na contratação
-        </li>
-        <li>
-          <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Formulário + botão WhatsApp configurados
-        </li>
-        <li>
-          <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Design responsivo para celular e desktop
-        </li>
-        <li>
-          <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Proposta personalizada em até 24h
-        </li>
-        <li>
-          <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Suporte durante todo o processo
-        </li>
-      </ul>
-    </div>
-    <div class="fp-testimonial" role="blockquote">
-      <p>"Com o desconto conseguimos contratar mais rápido. Em 30 dias já tínhamos 50 novos alunos!"</p>
+    <a href="index.html" class="fp-back">&#8592; Voltar ao site</a>
+    <span class="fp-logo">FIT<span>LEAD</span> DIGITAL</span>
+    <h1 class="fp-heading">GARANTA SEU<br><em>DESCONTO</em><br>DE 10%</h1>
+    <p class="fp-sub">Preencha o formulario ao lado e nossa equipe entra em contato em ate 24h para aplicar seu desconto na primeira landing page.</p>
+    <ul class="fp-benefits">
+      <li>
+        <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        10% de desconto garantido
+      </li>
+      <li>
+        <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Formulario + botao WhatsApp
+      </li>
+      <li>
+        <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Design responsivo
+      </li>
+      <li>
+        <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Proposta em ate 24h
+      </li>
+      <li>
+        <div class="fp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Suporte durante todo o processo
+      </li>
+    </ul>
+    <div class="fp-testimonial">
+      <p>"Com o desconto conseguimos contratar mais rapido. Em 30 dias ja tinhamos 50 novos alunos!"</p>
       <div class="fp-t-author">
-        <div class="fp-avatar" aria-hidden="true">RP</div>
+        <div class="fp-avatar">RP</div>
         <div>
           <p class="fp-t-name">Rafael Pereira</p>
-          <p class="fp-t-role">Proprietário da FitZone, MG</p>
+          <p class="fp-t-role">Proprietario da FitZone, MG</p>
         </div>
       </div>
     </div>
@@ -191,50 +337,61 @@
     <div class="fp-form-wrap">
 
       <div class="fp-success" id="fp-success" role="alert" aria-live="polite">
-        <div class="fp-success-icon" aria-hidden="true">🎉</div>
+        <div class="fp-success-icon">&#127881;</div>
         <h3>Desconto garantido!</h3>
-        <p>Nossa equipe vai entrar em contato em até 24 horas para aplicar seu desconto de 10%.</p>
-        <a href="index.html">← Voltar para o site</a>
+        <p>Nossa equipe vai entrar em contato em ate 24 horas para aplicar seu desconto de 10%.</p>
+        <a href="index.html">&#8592; Voltar para o site</a>
       </div>
 
-      <form class="fp-form" id="fp-form" novalidate aria-label="Formulário de desconto">
+      <form class="fp-form" id="fp-form" novalidate>
         <h2 class="fp-form-title">Seus dados</h2>
-        <p class="fp-form-sub">Campos com * são obrigatórios.</p>
-        <div>
+        <p class="fp-form-sub">Campos com * sao obrigatorios.</p>
+
+        <div class="fp-field">
           <label for="fp-nome">Nome da academia *</label>
-          <input type="text" id="fp-nome" name="nome" placeholder="Ex: Academia PowerFit" required autocomplete="organization" />
+          <input type="text" id="fp-nome" placeholder="Ex: Academia PowerFit" autocomplete="organization" />
+          <span class="campo-erro-msg" id="erro-nome">Por favor, informe o nome da academia.</span>
         </div>
-        <div>
+
+        <div class="fp-field">
           <label for="fp-responsavel">Seu nome *</label>
-          <input type="text" id="fp-responsavel" name="responsavel" placeholder="Ex: João Silva" required autocomplete="name" />
+          <input type="text" id="fp-responsavel" placeholder="Ex: Joao Silva" autocomplete="name" />
+          <span class="campo-erro-msg" id="erro-responsavel">Por favor, informe seu nome.</span>
         </div>
-        <div>
+
+        <div class="fp-field">
           <label for="fp-email">E-mail *</label>
-          <input type="email" id="fp-email" name="email" placeholder="seuemail@academia.com.br" required autocomplete="email" />
+          <input type="email" id="fp-email" placeholder="seuemail@academia.com.br" autocomplete="email" />
+          <span class="campo-erro-msg" id="erro-email">Informe um e-mail valido (ex: nome@dominio.com).</span>
         </div>
-        <div>
+
+        <div class="fp-field">
           <label for="fp-telefone">WhatsApp *</label>
-          <input type="tel" id="fp-telefone" name="telefone" placeholder="(00) 00000-0000" required autocomplete="tel" inputmode="numeric" maxlength="20" />
+          <input type="tel" id="fp-telefone" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="numeric" maxlength="20" />
+          <span class="campo-erro-msg" id="erro-telefone">Informe um numero valido com DDD (ex: (51) 99999-9999).</span>
         </div>
-        <div>
+
+        <div class="fp-field">
           <label for="fp-plano">Plano de interesse</label>
-          <select id="fp-plano" name="plano">
+          <select id="fp-plano">
             <option value="">Selecione um plano</option>
-            <option value="starter">Starter — R$497</option>
-            <option value="profissional">Profissional — R$897</option>
-            <option value="premium">Premium — R$1.497</option>
-            <option value="duvida">Tenho dúvidas</option>
+            <option value="starter">Starter &#8212; R$497</option>
+            <option value="profissional">Profissional &#8212; R$897</option>
+            <option value="premium">Premium &#8212; R$1.497</option>
+            <option value="duvida">Tenho duvidas</option>
           </select>
         </div>
-        <div>
+
+        <div class="fp-field">
           <label for="fp-mensagem">Mensagem (opcional)</label>
-          <textarea id="fp-mensagem" name="mensagem" placeholder="Conte um pouco sobre sua academia..."></textarea>
+          <textarea id="fp-mensagem" placeholder="Conte um pouco sobre sua academia..."></textarea>
         </div>
+
         <button type="submit" class="fp-submit">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           Quero meu desconto de 10%!
         </button>
-        <p class="fp-privacy">🔒 Seus dados estão seguros. Não enviamos spam.</p>
+        <p class="fp-privacy">&#128274; Seus dados estao seguros. Nao enviamos spam.</p>
       </form>
 
     </div>
@@ -242,25 +399,76 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var form = document.getElementById('fp-form');
-      var success = document.getElementById('fp-success');
 
+      // ── WhatsApp: so numeros ──
       var tel = document.getElementById('fp-telefone');
       tel.addEventListener('input', function () {
         this.value = this.value.replace(/[^0-9()\s+\-]/g, '');
       });
 
-      form.addEventListener('submit', function (e) {
+      // ── Validacao ──
+      function setErro(campoId, erroId, mostrar) {
+        var campo = document.getElementById(campoId);
+        var msg = document.getElementById(erroId);
+        if (mostrar) {
+          campo.classList.add('erro');
+          msg.classList.add('visivel');
+        } else {
+          campo.classList.remove('erro');
+          msg.classList.remove('visivel');
+        }
+      }
+
+      // Limpa erro ao digitar
+      ['fp-nome', 'fp-responsavel', 'fp-email', 'fp-telefone'].forEach(function (id) {
+        var campo = document.getElementById(id);
+        campo.addEventListener('input', function () {
+          this.classList.remove('erro');
+          var erroId = 'erro-' + id.replace('fp-', '');
+          var msg = document.getElementById(erroId);
+          if (msg) msg.classList.remove('visivel');
+        });
+      });
+
+      function emailValido(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+      }
+
+      function telefoneValido(tel) {
+        var digits = tel.replace(/\D/g, '');
+        return digits.length >= 10 && digits.length <= 11;
+      }
+
+      document.getElementById('fp-form').addEventListener('submit', function (e) {
         e.preventDefault();
+
         var nome = document.getElementById('fp-nome').value.trim();
+        var responsavel = document.getElementById('fp-responsavel').value.trim();
         var email = document.getElementById('fp-email').value.trim();
         var telefone = document.getElementById('fp-telefone').value.trim();
-        if (!nome || !email || !telefone) {
-          alert('Por favor, preencha todos os campos obrigatórios (*).');
+
+        var valido = true;
+
+        if (!nome) { setErro('fp-nome', 'erro-nome', true); valido = false; }
+        else { setErro('fp-nome', 'erro-nome', false); }
+
+        if (!responsavel) { setErro('fp-responsavel', 'erro-responsavel', true); valido = false; }
+        else { setErro('fp-responsavel', 'erro-responsavel', false); }
+
+        if (!emailValido(email)) { setErro('fp-email', 'erro-email', true); valido = false; }
+        else { setErro('fp-email', 'erro-email', false); }
+
+        if (!telefoneValido(telefone)) { setErro('fp-telefone', 'erro-telefone', true); valido = false; }
+        else { setErro('fp-telefone', 'erro-telefone', false); }
+
+        if (!valido) {
+          var primeiro = document.querySelector('.fp-form input.erro, .fp-form select.erro');
+          if (primeiro) primeiro.scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
-        form.style.display = 'none';
-        success.classList.add('show');
+
+        document.getElementById('fp-form').style.display = 'none';
+        document.getElementById('fp-success').classList.add('show');
       });
     });
   </script>
