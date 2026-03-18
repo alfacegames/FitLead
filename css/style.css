@@ -10,7 +10,7 @@
 .high-contrast { --blue: #0000FF; --blue-dark: #000080; --white: #FFFFFF; --dark: #000000; --gray: #000000; --off-white: #FFFFFF; }
 
 html { scroll-behavior: smooth; font-size: calc(16px * var(--font-scale)); }
-body { font-family: var(--font-body); background: var(--white); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+body { font-family: var(--font-body); background: var(--white); color: var(--dark); line-height: 1.6; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 
@@ -42,10 +42,10 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display:
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu { display: none; flex-direction: column; background: var(--white); border-top: 1px solid rgba(19,64,200,0.1); padding: 16px 24px; gap: 12px; }
+.mobile-menu { display: none; flex-direction: column; width: 100%; background: #0A2280 !important; position: sticky; top: 64px; z-index: 9999; }
 .mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 16px; font-weight: 500; color: var(--dark); padding: 8px 0; border-bottom: 1px solid var(--off-white); }
-.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a { font-size: 16px; font-weight: 500; color: #fff !important; padding: 16px 24px; border-bottom: 2px solid #000; display: block; width: 100%; background: #0A2280 !important; }
+.mobile-menu a:last-child { border-bottom: 2px solid #000; } .mobile-menu a:hover { background: #1340C8 !important; }
 
 /* Hero */
 #hero { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #3A6FFF 100%); color: var(--white); padding: 80px 24px 60px; position: relative; overflow: hidden; }
